@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
+    <script src="./src/js/jquery-3.4.1.min.js"></script>
+    <script src="./slick/slick.min.js"></script>
+    <link rel="prefetch" href="./src/img/true_1.png">
+    <link rel="prefetch" href="./src/img/wrong_1.png">
+    <link rel="prefetch" href="./src/img/true_2.png">
+    <link rel="prefetch" href="./src/img/wrong_2.png">
+</head>
+<body>
+    <div class="slider">
+        <div class="slider__item slider__item_start">
+            <div class="slider__title">Представься и начнем</div>
+            <div class="slider__form">
+                <input type="text" placeholder="Имя" class="slider__input">
+                <input type="text" placeholder="Фамилия" class="slider__input">
+            </div>
+            <div class="js-start slider__button slider__button_long">Начать</div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">При оформлении каких продуктов Клиенту не нужно приезжать в Банк?</div>
+            <div>
+                <div class="js-button-wrong slider__button slider__button_long">КБК, СМАРТ, Доверие</div>
+                <div class="js-button-correct slider__button slider__button_long">СМАРТ-кредит и Экспресс-Доверие</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">Сколько заявок подано онлайн?</div>
+            <div>
+                <div class="js-button-correct slider__button slider__button_long">200 000</div>
+                <div class="js-button-wrong slider__button slider__button_long">100 000</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">На какую сумму подано заявок?</div>
+            <div>
+                <div class="js-button-correct slider__button slider__button_long">540 млрд рублей</div>
+                <div class="js-button-wrong slider__button slider__button_long">600 млрд рублей</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">Какие гарантии можно оформить онлайн?</div>
+            <div>
+                <div class="js-button-wrong slider__button slider__button_long">Пожизненные</div>
+                <div class="js-button-correct slider__button slider__button_long">Гарантии в рамках ФЗ</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">В каком процессе кредитного конвейера не участвует КА?</div>
+            <div>
+                <div class="js-button-correct slider__button slider__button_long">Белая зона онлайн</div>
+                <div class="js-button-wrong slider__button slider__button_long">Нет такого процесса</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">Как Клиент оперативно узнает об изменении статуса по заявке?</div>
+            <div>
+                <div class="js-button-wrong slider__button slider__button_long">КМ позвонит</div>
+                <div class="js-button-correct slider__button slider__button_long">Получит СМС сообщение</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_question">
+            <div class="slider__title">Какую оценку от Алексея Шашкина получит набравший наибольшее количество баллов?</div>
+            <div class="slider__button-wrapper_square">
+                <div class="slider__button slider__button_square">A</div>
+                <div class="js-button-end slider__button slider__button_square">B</div>
+                <div class="slider__button slider__button_square">C</div>
+                <div class="slider__button slider__button_square">D</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_answerresult">
+            <div class="slider__title"></div>
+            <div class="js-button-next slider__button slider__button_long">Следующий вопрос</div>
+        </div>
+        <div class="slider__item slider__item_map">
+            <div class="map__wrapper">
+                <span class="marker"></span>
+                <div class="map__button">1</div>
+                <div class="map__button">2</div>
+                <div class="map__button">3</div>
+                <div class="map__button">4</div>
+                <div class="map__button">5</div>
+                <div class="map__button">6</div>
+                <div class="map__button">7</div>
+            </div>
+        </div>
+
+        <div class="slider__item slider__item_userresult">
+            <div class="slider__title">Ваш результат:</div>
+            <span class="score"></span>
+            <div class="js-button-gameresult slider__button slider__button_long">Посмотреть результаты</div>
+        </div>
+
+        <div class="slider__item slider__item_gameresult">
+            <div class="slider__title">Результаты</div>
+            <div class="scoretable"></div>
+            <div class="js-button-userresult slider__button slider__button_long" onclick="$slider.slick('slickGoTo', 10,  false);">Вернуться к результату</div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyCaRBCvSa5n17kCBw21YyDV1nfgRbgijzI",
+          authDomain: "sbofgame.firebaseapp.com",
+          databaseURL: "https://sbofgame.firebaseio.com",
+          projectId: "sbofgame",
+          storageBucket: "sbofgame.appspot.com",
+          messagingSenderId: "1042325515757",
+          appId: "1:1042325515757:web:f45279842c644691b4cbe4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
