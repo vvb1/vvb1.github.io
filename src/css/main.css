@@ -108,7 +108,7 @@ body {
 }
 
 .slider__item_answerresult.correct2 {
-    background-image: url(../img/true_1.png), linear-gradient(#c8fce5, #e6e6ff);
+    background-image: url(../img/true_2.png), linear-gradient(#c8fce5, #e6e6ff);
 }
 
 .slider__item_answerresult.wrong1 {
