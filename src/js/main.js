@@ -93,12 +93,12 @@ $(document).ready(function(){
             });
 
                firebase.database().ref('/gameover').once('value').then(function(snapshot) {
-            return snapshot.val();
-        }).then(function(gameover) {
-            if(!gameover) {
-                pushUserResult();
-            }
-        });
+                    return snapshot.val();
+                }).then(function(gameover) {
+                    if(!gameover) {
+                        pushUserResult();
+                    }
+                });
 
             
         }
@@ -121,7 +121,7 @@ $(document).ready(function(){
             gameover = $('.js-button-gameresult').css('display', flag ? 'flex' : 'none');
         });
 
-            if ($scoretable.html().length === 0 && !gameover) {
+            if ($scoretable.html().length === 0) {
                 firebase.database().ref('/users').once('value').then(function(snapshot) {
                         return snapshot.val() || {};
                     }).then(function(users) {
