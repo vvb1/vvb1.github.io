@@ -92,7 +92,15 @@ $(document).ready(function(){
                 game.score = +game.score + +el.result;
             });
 
-            pushUserResult();
+               firebase.database().ref('/gameover').once('value').then(function(snapshot) {
+            return snapshot.val();
+        }).then(function(gameover) {
+            if(!gameover) {
+                pushUserResult();
+            }
+        });
+
+            
         }
 
         $('.slider__item_userresult .score').html(game.score + '<span>' + (game.score === 0 ? 'баллов' : game.score === 1 ? 'балл' : game.score < 5 ? 'баллa' : 'баллов') + '<span/>');
