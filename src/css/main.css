@@ -270,8 +270,15 @@ body {
     flex-direction: column;
     margin-top: 24px;
     font-family: GraphikLCGBlack, sans-serif;
-    font-size: 30px;
+    font-size: 26px;
+	line-height: 33px;
     font-weight: bold;
+}
+
+.slider__title p {
+	font-family: GraphikLCGRegular, sans-serif;
+	font-size: 18px;
+	line-height: 26px;
 }
 
 .slider__item_question .slider__title::before,
@@ -288,7 +295,14 @@ body {
 }
 
 .slider__item_start .slider__title {
- margin-top: 50px;
+ 	margin-top: 50px;
+}
+
+.slider__item_start .slider__title,
+.slider__item_userresult .slider__title,
+.slider__item_gameresult .slider__title {
+	font-size: 30px;
+	line-height: 38px;
 }
 
 .scoretable {
