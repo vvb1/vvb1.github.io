@@ -83,16 +83,33 @@ $(document).ready(function(){
         $('.slider__item_answerresult').removeClass('correct1 correct2 wrong1 wrong2');
     });
 
-    $('.js-button-end').on('click', function() {
+    $('.js-button-b').on('click', function() {
         game.questions[6].result = true;
         game.current = 10;
 
-        if(game.score === 0) {
-            game.questions.forEach(function(el){
-                game.score = +game.score + +el.result;
-            });
+        $('.slider__item_answerresult').addClass('correct2');
+        $('.slider__item_answerresult .slider__title').html('<span>7 вопрос</span>' + getGameFromLocalStorage().questions[6].correctText);
+        $('.slider__item_answerresult .js-button-next').remove();
+        $('.slider__item_answerresult').append('<div class="js-button-end slider__button slider__button_long">К результатам</div>');
 
-               firebase.database().ref('/gameover').once('value').then(function(snapshot) {
+        buttonEndHandler();
+
+        setGameToLocalStorage();
+        $slider.slick('slickGoTo', 8,  false);
+
+    });
+
+    function buttonEndHandler() {
+        $('.js-button-end').on('click', function() {
+            game.questions[6].result = true;
+            game.current = 10;
+
+            if(game.score === 0) {
+                game.questions.forEach(function(el){
+                    game.score = +game.score + +el.result;
+                });
+
+                firebase.database().ref('/gameover').once('value').then(function(snapshot) {
                     return snapshot.val();
                 }).then(function(gameover) {
                     if(!gameover) {
@@ -100,14 +117,17 @@ $(document).ready(function(){
                     }
                 });
 
-            
-        }
 
-        $('.slider__item_userresult .score').html(game.score + '<span>' + (game.score === 0 ? 'баллов' : game.score === 1 ? 'балл' : game.score < 5 ? 'баллa' : 'баллов') + '<span/>');
-        $slider.slick('slickGoTo', 10,  false);
+            }
 
-        setGameToLocalStorage();
-    });
+            $('.slider__item_userresult .score').html(game.score + '<span>' + (game.score === 0 ? 'баллов' : game.score === 1 ? 'балл' : game.score < 5 ? 'баллa' : 'баллов') + '<span/>');
+            $slider.slick('slickGoTo', 10,  false);
+
+            setGameToLocalStorage();
+        });
+    }
+
+    buttonEndHandler();
 
     $('.js-button-gameresult').on('click', function() {
         var usersList = [];
@@ -211,39 +231,37 @@ $(document).ready(function(){
             questions: [
                 {
                     result: null,
-                    correctText: 'Верно!<p>Вы на правильном пути.</p>',
-                    wrongText: 'Неверно.<p>За готовой картой Клиенту надо будет приехать в офис.</p>'
+                    correctText: 'Верно!<p>Вы&nbsp;на&nbsp;правильном пути</p>',
+                    wrongText: 'Неверно.<p>За&nbsp;готовой картой Клиенту надо будет приехать в&nbsp;офис</p>'
                 },
                 {
                     result: null,
                     correctText: 'Правильно!',
-                    wrongText: 'Нет!<p>Заявок подано в два раза больше</p>'
+                    wrongText: 'Нет!<p>Заявок подано в&nbsp;два раза больше</p>'
                 },
                 {
                     result: null,
                     correctText: 'Правильно!',
-                    wrongText: 'Неверно.<p>Заявок подано на сумму 540 млрд рублей.</p>',
-                    imgCorrect: 'url(src/img/true_1.png)',
-                    imgWrong: 'url(src/img/ wrong_1.png)',
+                    wrongText: 'Неверно.<p>Заявок подано на&nbsp;сумму 540 млрд рублей</p>'
                 },
                 {
                     result: null,
-                    correctText: 'Верно!<p>Сейчас только 24%, но мы уверены, что общими усилиями их доля увеличится!</p>',
-                    wrongText: 'Хотелось бы, но нет!<p>Функционал реализован для гарантий в рамках ФЗ.</p>'
+                    correctText: 'Верно!<p>Сейчас только&nbsp;24%, но&nbsp;мы&nbsp;уверены, что общими усилиями их&nbsp;доля увеличится!</p>',
+                    wrongText: 'Хотелось&nbsp;бы, но&nbsp;нет!<p>Функционал реализован для гарантий в&nbsp;рамках&nbsp;ФЗ</p>'
                 },
                 {
                     result: null,
                     correctText: 'Верно!',
-                    wrongText: 'Неверный ответ.<p>У вас еще не было сделок по Белой зоне? Так будут!</p>'
+                    wrongText: 'Неверный ответ.<p>У&nbsp;вас еще не&nbsp;было сделок по&nbsp;Белой зоне? Так будут!</p>'
                 },
                 {
                     result: null,
                     correctText: 'Верно!<p>Теперь СББОЛ стал еще оперативнее!</p>',
-                    wrongText: 'Можно и так.<p>Но зачем тратить время, если СМС Клиенту поступит быстрее!</p>'
+                    wrongText: 'Можно и так.<p>Но&nbsp;зачем тратить время, если СМС Клиенту поступит быстрее!</p>'
                 },
                 {
                     result: null,
-                    correctText: 'Правильно!vДа, но нужно выполнитьбизнес-план</p>',
+                    correctText: 'Правильно!<p>Да, но&nbsp;нужно выполнить бизнес-план</p>',
                     wrongText: '',
                 },
             ],
