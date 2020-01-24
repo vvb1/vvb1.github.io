@@ -80,7 +80,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 48px;
-    font-family: GraphikLCGBlack, sans-serif    ;
+    font-family: GraphikLCGBlack, sans-serif;
 }
 
 .slider__item_userresult .score span {
@@ -437,3 +437,18 @@ body {
 .js-button-gameresult {
     display: none;
 }
+
+
+@media screen and (min-height: 670px) {
+    .slider__item_userresult .score {
+        width: 220px;
+        height: 450px;
+        font-size: 62px;
+    }
+
+    .slider__item_userresult .score span {
+        font-size: 18px;
+    }
+
+}
+
