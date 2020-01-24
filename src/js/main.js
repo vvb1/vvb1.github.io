@@ -92,19 +92,7 @@ $(document).ready(function(){
         $('.slider__item_answerresult .js-button-next').remove();
         $('.slider__item_answerresult').append('<div class="js-button-end slider__button slider__button_long">К результатам</div>');
 
-        buttonEndHandler();
-
-        setGameToLocalStorage();
-        $slider.slick('slickGoTo', 8,  false);
-
-    });
-
-    function buttonEndHandler() {
-        $('.js-button-end').on('click', function() {
-            game.questions[6].result = true;
-            game.current = 10;
-
-            if(game.score === 0) {
+        if(game.score === 0) {
                 game.questions.forEach(function(el){
                     game.score = +game.score + +el.result;
                 });
@@ -120,10 +108,19 @@ $(document).ready(function(){
 
             }
 
-            $('.slider__item_userresult .score').html(game.score + '<span>' + (game.score === 0 ? 'баллов' : game.score === 1 ? 'балл' : game.score < 5 ? 'баллa' : 'баллов') + '<span/>');
-            $slider.slick('slickGoTo', 10,  false);
+        $('.slider__item_userresult .score').html(game.score + '<span>' + (game.score === 0 ? 'баллов' : game.score === 1 ? 'балл' : game.score < 5 ? 'баллa' : 'баллов') + '<span/>');
+           
+        buttonEndHandler();
 
-            setGameToLocalStorage();
+        setGameToLocalStorage();
+        $slider.slick('slickGoTo', 8,  false);
+
+    });
+
+    function buttonEndHandler() {
+        $('.js-button-end').on('click', function() {
+            
+            $slider.slick('slickGoTo', 10,  false);
         });
     }
 
