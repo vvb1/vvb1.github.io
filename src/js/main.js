@@ -90,7 +90,11 @@ $(document).ready(function(){
         $('.slider__item_answerresult').addClass('correct2');
         $('.slider__item_answerresult .slider__title').html('<span>7 вопрос</span>' + getGameFromLocalStorage().questions[6].correctText);
         $('.slider__item_answerresult .js-button-next').remove();
-        $('.slider__item_answerresult').append('<div class="js-button-end slider__button slider__button_long">К результатам</div>');
+
+        if(!$('.js-button-end.slider__button.slider__button_long').length) {
+            $('.slider__item_answerresult').append('<div class="js-button-end slider__button slider__button_long">К результатам</div>');
+        }
+
 
         if(game.score === 0) {
                 game.questions.forEach(function(el){
