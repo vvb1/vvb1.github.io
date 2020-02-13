@@ -238,7 +238,7 @@ $(document).ready(function(){
                 {
                     result: null,
                     correctText: 'Правильно!',
-                    wrongText: 'Нет!<p>Заявок подано в&nbsp;больше</p>'
+                    wrongText: 'Нет!<p>Заявок подано больше</p>'
                 },
                 {
                     result: null,
