@@ -238,12 +238,12 @@ $(document).ready(function(){
                 {
                     result: null,
                     correctText: 'Правильно!',
-                    wrongText: 'Нет!<p>Заявок подано в&nbsp;два раза больше</p>'
+                    wrongText: 'Нет!<p>Заявок подано в&nbsp;больше</p>'
                 },
                 {
                     result: null,
                     correctText: 'Правильно!',
-                    wrongText: 'Неверно.<p>Заявок подано на&nbsp;сумму 540 млрд рублей</p>'
+                    wrongText: 'Неверно.<p>Доля автовыдач пока не&nbsp;такая большая</p>'
                 },
                 {
                     result: null,
