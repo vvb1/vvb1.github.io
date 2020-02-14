@@ -56,7 +56,6 @@ body {
     display: inline-block;
     height: 100vh;
     width: 100vw;
-    background-image: url(../img/new/0.jpg);
     top: 0;
     left: 0;
     background-repeat: no-repeat;
@@ -104,19 +103,19 @@ body {
 }
 
 .slider__item_answerresult.correct1 {
-    background-image: url(../img/true_1.png), linear-gradient(#c8fce5, #e6e6ff);
+    background-image: linear-gradient(#c8fce5, #e6e6ff);
 }
 
 .slider__item_answerresult.correct2 {
-    background-image: url(../img/true_2.png), linear-gradient(#c8fce5, #e6e6ff);
+    background-image: linear-gradient(#c8fce5, #e6e6ff);
 }
 
 .slider__item_answerresult.wrong1 {
-    background-image: url(../img/wrong_1.png), linear-gradient(#ffe9f2, #e6e6ff);
+    background-image: linear-gradient(#ffe9f2, #e6e6ff);
 }
 
 .slider__item_answerresult.wrong2 {
-    background-image: url(../img/wrong_2.png), linear-gradient(#ffe9f2, #e6e6ff);
+    background-image: linear-gradient(#ffe9f2, #e6e6ff);
 }
 
 .slider .slider__item_map {
