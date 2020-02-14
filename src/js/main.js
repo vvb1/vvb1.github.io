@@ -232,37 +232,37 @@ $(document).ready(function(){
             questions: [
                 {
                     result: null,
-                    correctText: 'Верно!<p>Вы&nbsp;на&nbsp;правильном пути</p>',
-                    wrongText: 'Неверно.<p>За&nbsp;готовой картой Клиенту надо будет приехать в&nbsp;офис</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Правильно!',
-                    wrongText: 'Нет!<p>Заявок подано больше</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Правильно!',
-                    wrongText: 'Неверно.<p>Доля автовыдач пока не&nbsp;такая большая</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Верно!<p>Сейчас только&nbsp;24%, но&nbsp;мы&nbsp;уверены, что общими усилиями их&nbsp;доля увеличится!</p>',
-                    wrongText: 'Хотелось&nbsp;бы, но&nbsp;нет!<p>Функционал реализован для гарантий в&nbsp;рамках&nbsp;ФЗ</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Верно!',
-                    wrongText: 'Неверный ответ.<p>У&nbsp;вас еще не&nbsp;было сделок по&nbsp;Белой зоне? Так будут!</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Верно!<p>Теперь СББОЛ стал еще оперативнее!</p>',
-                    wrongText: 'Можно и так.<p>Но&nbsp;зачем тратить время, если СМС Клиенту поступит быстрее!</p>'
+                    correctText: 'Верно',
+                    wrongText: 'Неверно'
                 },
                 {
                     result: null,
-                    correctText: 'Правильно!<p>Да, но&nbsp;нужно выполнить бизнес-план</p>',
+                    correctText: 'Верно',
                     wrongText: '',
                 },
             ],
