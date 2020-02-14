@@ -133,7 +133,7 @@ body {
     display: inline-block;
     height: 100vh;
     width: 100vw;
-    background-image: url(../img/map_clear.png);
+    /*background-image: url(../img/map_clear.png);*/
     top: -24px;
     left: -32px;
     background-repeat: no-repeat;
